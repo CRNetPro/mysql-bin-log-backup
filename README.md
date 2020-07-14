@@ -1,5 +1,17 @@
+## Check which bin log in use
+``` sql
+show master status;
 
-## schedule the execution of program binlog-backup.sh
++------------------+----------+--------------+------------------+
+| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |
++------------------+----------+--------------+------------------+
+| mysql-bin.000001 | 69006621 |              |                  |
++------------------+----------+--------------+------------------+
+1 row in set (0.00 sec)
+```
+or check with the index file
+
+## Schedule the execution of program binlog-backup.sh
 ```bash
 $ sudo vi /etc/crontab
 
